@@ -1,0 +1,32 @@
+{
+  "name": "lm-sign-area",
+  "version": "1.0.0",
+  "description": "拖动合同签署区域组件",
+  "author": "liumapp <liumapp.com@gmail.com>",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liumapp/lm-sign-area.git"
+  },
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/liumapp/lm-sign-area/issues"
+  },
+  "homepage": "http://www.liumapp.com/",
+  "keywords": [
+    "vue",
+    "component",
+    "dragabble",
+    "resizable",
+    "sign"
+  ],
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 9"
+  ]
+}
