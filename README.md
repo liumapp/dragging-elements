@@ -1,4 +1,4 @@
-<h1 align="center">deformation</h1>
+<h1 align="center">lm-sign-area</h1>
 
 
 > 自由拖动缩放组件.
@@ -19,7 +19,7 @@
 ## 安装 及 使用
 
 ```bash
-$ npm install --save deformation
+$ npm install --save lm-sign-area
 ```
 
 
@@ -27,9 +27,9 @@ $ npm install --save deformation
 
 ```js
 import Vue from 'vue'
-import deformation from 'deformation'
+import signArea from 'lm-sign-area'
 
-Vue.component('Deformation', deformation)
+Vue.component('signArea', signArea)
 ```
 
 使用组件
@@ -37,15 +37,14 @@ Vue.component('Deformation', deformation)
 ```vue
 <template>
   <div style="height: 500px; width: 500px; border: 1px solid red; position: relative;">
-    <Deformation :w="100" :h="100" v-on:dragging="onDrag" v-on:resizing="onResize" :parent="true">
-      <p>Hello! I'm a flexible component. You can drag me around and you can resize me.<br>
-      X: {{ x }} / Y: {{ y }} - Width: {{ width }} / Height: {{ height }}</p>
-    </Deformation>
+    <sign-area :w="200" :h="100" v-on:dragging="onDrag" v-on:resizing="onResize" :parent="true" :resizable="false">
+        X: {{ x }} / Y: {{ y }} - Width: {{ width }} / Height: {{ height }}</p>
+    </sign-area>
   </div>
 </template>
 
 <script>
-import Deformation from 'deformation'
+import signArea from 'lm-sign-area'
 
 export default {
   data: function () {
@@ -57,7 +56,7 @@ export default {
     }
   },
   components: {
-    Deformation
+    signArea
   },
   methods: {
     onResize: function (x, y, width, height) {
@@ -84,7 +83,7 @@ export default {
 
 定义组件是否可以拖动.
 
-| 参数值       | 效果         | 
+| 参数值       | 效果         |
 | ----------- |:-------------:|
 |true | 组件可以在x轴,y轴方向自由拖动 |
 |false | 组件无法拖动 |
@@ -94,7 +93,7 @@ export default {
 |3 | 组件可以在y轴方向自由拖动 |
 
 ```html
-<Deformation :draggable="false">
+<sign-area :draggable="false">
 ```
 
 #### resizable
@@ -104,7 +103,7 @@ export default {
 
 定义组件是否可以调整大小.
 
-| 参数值       | 效果         | 
+| 参数值       | 效果         |
 | ----------- |:-------------:|
 |true | 组件可以在x轴,y轴方向调整大小 |
 |false | 组件无法拖动 |
@@ -114,7 +113,7 @@ export default {
 |3 | 组件可以在y轴方向调整大小 |
 
 ```html
-<Deformation :resizable="false">
+<sign-area :resizable="false">
 ```
 
 #### w
@@ -125,7 +124,7 @@ export default {
 定义组件的初始宽度.
 
 ```html
-<Deformation :w="200">
+<sign-area :w="200">
 ```
 
 #### h
@@ -136,7 +135,7 @@ export default {
 定义组件的初始高度.
 
 ```html
-<Deformation :h="200">
+<sign-area :h="200">
 ```
 
 #### minw
@@ -147,7 +146,7 @@ export default {
 定义组件的最小宽度.
 
 ```html
-<Deformation :minw="50">
+<sign-area :minw="50">
 ```
 
 #### minh
@@ -158,7 +157,7 @@ export default {
 定义组件的最小高度.
 
 ```html
-<Deformation :minh="50">
+<sign-area :minh="50">
 ```
 
 #### x
@@ -169,7 +168,7 @@ export default {
 定义组件初始横轴坐标.
 
 ```html
-<Deformation :x="0">
+<sign-area :x="0">
 ```
 
 #### y
@@ -180,7 +179,7 @@ export default {
 定义组件初始纵轴坐标.
 
 ```html
-<Deformation :y="0">
+<sign-area :y="0">
 ```
 
 #### grid
@@ -191,7 +190,7 @@ export default {
 定义组件网格.
 
 ```html
-<Deformation :grid="[1,1]">
+<sign-area :grid="[1,1]">
 ```
 
 #### restrain
@@ -202,7 +201,7 @@ export default {
 约束元素宽高只能是restrain的倍数.
 
 ```html
-<Deformation :restrain="100">
+<sign-area :restrain="100">
 ```
 
 ---
@@ -215,7 +214,7 @@ export default {
 限制元素只能在父元素内拖动
 
 ```html
-<Deformation :parent="true">
+<sign-area :parent="true">
 ```
 
 ---
@@ -230,7 +229,7 @@ Parameters: `-`
 组件被初始化事件.
 
 ```html
-<Deformation @activated="onActivated">
+<sign-area @activated="onActivated">
 ```
 
 #### deactivated
@@ -241,7 +240,7 @@ Parameters: `-`
 组件被销毁事件.
 
 ```html
-<Deformation @deactivated="onDeactivated">
+<sign-area @deactivated="onDeactivated">
 ```
 
 #### resizing
@@ -256,7 +255,7 @@ Parameters:
 组件大小改变事件.
 
 ```html
-<Deformation @resizing="onResizing">
+<sign-area @resizing="onResizing">
 ```
 
 #### resizestop
@@ -271,7 +270,7 @@ Parameters:
 组件大小改变结束事件.
 
 ```html
-<Deformation @resizestop="onResizstop">
+<sign-area @resizestop="onResizstop">
 ```
 
 #### dragging
@@ -284,7 +283,7 @@ Parameters:
 组件拖动事件.
 
 ```html
-<Deformation @dragging="onDragging">
+<sign-area @dragging="onDragging">
 ```
 
 #### dragstop
@@ -305,5 +304,5 @@ Parameters:
 按键事件.
 
 ```html
-<Deformation @dragstop="onDragstop">
+<sign-area @dragstop="onDragstop">
 ```
