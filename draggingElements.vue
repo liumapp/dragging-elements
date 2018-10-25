@@ -25,7 +25,7 @@
 <script>
   export default {
     replace: true,
-    name: 'signArea',
+    name: 'draggingElements',
     props: {
       draggable: { // 是否可被拖动
         type: [Boolean, Number],

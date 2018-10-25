@@ -1,16 +1,16 @@
 {
-  "name": "lm-sign-area",
+  "name": "dragging-elements",
   "version": "1.0.0",
-  "description": "拖动合同签署区域组件",
+  "description": "可拖动的元素组件",
   "author": "liumapp <liumapp.com@gmail.com>",
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/liumapp/lm-sign-area.git"
+    "url": "https://github.com/liumapp/dragging-elements.git"
   },
   "license": "GPLv3",
   "bugs": {
-    "url": "https://github.com/liumapp/lm-sign-area/issues"
+    "url": "https://github.com/liumapp/dragging-elements/issues"
   },
   "homepage": "http://www.liumapp.com/",
   "keywords": [

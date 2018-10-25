@@ -1,1 +1,1 @@
-export { default } from './signArea.vue'
+export { default } from './draggingElements.vue'

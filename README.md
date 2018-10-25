@@ -1,4 +1,4 @@
-<h1 align="center">lm-sign-area</h1>
+<h1 align="center">dragging-elements</h1>
 
 
 > 自由拖动缩放组件.
