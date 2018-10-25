@@ -39,47 +39,63 @@
     replace: true,
     name: 'draggingElements',
     props: {
-      draggable: { // 是否可被拖动
+      index: {
+        //组件序号
+        type: Number,
+        default: 0,
+        validator: (val) => {
+          return (typeof val === 'number' && (val > 0 || val == 0))
+        }
+      },
+      draggable: {
+        // 是否可被拖动
         type: [Boolean, Number],
         default: true
       },
-      resizable: { // 是否可改变大小
+      resizable: {
+        // 是否可改变大小
         type: [Boolean, Number],
         default: true
       },
-      w: { // 宽度
+      w: {
+        // 宽度
         type: Number,
         default: 200,
         validator: (val) => {
           return (typeof val === 'number' && val > 0)
         }
       },
-      h: { // 高度
+      h: {
+        // 高度
         type: Number,
         default: 200,
         validator: (val) => {
           return (typeof val === 'number' && val > 0)
         }
       },
-      minw: { // 最小宽度
+      minw: {
+        // 最小宽度
         type: Number,
         default: 50,
         validator: function (val) {
           return val > 0
         }
       },
-      minh: { // 最小高度
+      minh: {
+        // 最小高度
         type: Number,
         default: 50,
         validator: function (val) {
           return val > 0
         }
       },
-      x: { // 距父元素左上角X轴偏移量
+      x: {
+        // 距父元素左上角X轴偏移量
         type: Number,
         default: 0
       },
-      y: { // 距父元素左上角Y轴偏移量
+      y: {
+        // 距父元素左上角Y轴偏移量
         type: Number,
         default: 0
       },
@@ -93,7 +109,8 @@
           return [1, 1]
         }
       },
-      restrain: { // 约束组件大小
+      restrain: {
+        // 约束组件大小
         type: Number,
         default: 0
       },
@@ -255,7 +272,7 @@
           if (this.draggable === 3 || this.draggable === 1 || this.draggable === true) {
             this.top = (Math.round(this.elmY / this.grid[1]) * this.grid[1])
           }
-          this.$emit('dragging', this.left, this.top)
+          this.$emit('dragging', this.left, this.top, this.index)
         }
       },
       getRestrain (num) {
@@ -336,6 +353,7 @@
     position: absolute;
     user-select: none;
     border-color: #45DBF7;
+    text-align: center;
   }
   .draggable:hover {
     cursor: move;
