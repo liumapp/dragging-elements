@@ -27,7 +27,7 @@ $ npm install --save lm-sign-area
 
 ```js
 import Vue from 'vue'
-import signArea from 'lm-sign-area'
+import signArea from 'dragging-elememnts'
 
 Vue.component('signArea', signArea)
 ```
