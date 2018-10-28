@@ -19,7 +19,7 @@
 ## 安装 及 使用
 
 ```bash
-$ npm install --save lm-sign-area
+$ npm install --save dragging-elements
 ```
 
 
@@ -44,7 +44,7 @@ Vue.component('signArea', signArea)
 </template>
 
 <script>
-import signArea from 'lm-sign-area'
+import signArea from 'dragging-elements'
 
 export default {
   data: function () {
