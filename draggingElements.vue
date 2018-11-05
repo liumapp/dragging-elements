@@ -211,6 +211,7 @@
               if(this.top+this.h>this.parentH){
                 this.top = this.parentH - this.h;
               }
+              this.$emit('dragging', this.left, this.top, this.index)
           }
       },
       touchEnd:function(ev){
@@ -239,6 +240,7 @@
               if(this.top+this.h>this.parentH){
                 this.top = this.parentH - this.h;
               }
+              this.$emit('dragging', this.left, this.top, this.index)
           }
       },
       calculationParent () {
